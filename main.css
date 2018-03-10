@@ -1,0 +1,200 @@
+a:link    {color:inherit; background-color:transparent; text-decoration:none}
+a:visited {color:inherit; background-color:transparent; text-decoration:none}
+a:hover   {color:inherit; background-color:transparent; text-decoration:none} 
+a:active  {color:inherit; background-color:transparent; text-decoration:none}
+@font-face {
+ font-family: Lekton;
+ src: url('./assets/Lekton-Regular.ttf'); }
+@font-face {
+ font-family: Overpass;
+ src: url('./assets/overpass-mono-light.otf'); }
+@font-face {
+ font-family: Raleway;
+ src: url('./assets/Raleway-Light.ttf'); }
+*:focus {
+ outline: none; }
+
+html, body  { background-color:#444; }
+body        { overflow: hidden; }
+#background { z-index: -15; }
+#content {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: rgba( 1, 1, 1, 0 ); }
+
+#bar {
+  position: absolute;
+  top: calc(100% - 44px);
+  left: 0%;
+  width: 100%;
+  height: 44px;
+  background: hsl( 178, 100%, 11%);
+  border-top: 1px solid hsl( 178, 100%, 14%); }
+.bar-elem {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 24px; 
+  border-radius: 50%;
+  font-family: 'Raleway';
+  font-size: 14pt;
+  text-align: center;
+  background: rgba( 15, 15, 15, 0.3);
+  border: 3px solid hsl( 178, 100%, 7.4%);
+  color: rgba( 15, 15, 15, 0.8);
+  transform: translate( 0%, -50%);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+.bar-elem:hover {
+  background: rgba( 15, 15, 15, 0.5);
+  border: 3px solid hsl( 178, 100%, 15%);
+  color: hsl(178, 100%, 15%); }
+.bar-elem.active {
+  background: hsl( 178, 100%, 14%);
+  color: hsl( 178, 100%, 20%); }
+
+.bar-elem.new     { left:  15px; font-size: 18pt; }
+.bar-elem.auto    { left:  56px; }
+.bar-elem.datum   { left:  97px; }
+.bar-elem.refresh { left: 138px; }
+.bar-elem.split   { left: 179px; }
+.ui-spinner { 
+  position: absolute; 
+  left: 197px;
+  top: 50%;
+  transform: translate( 0%, -50%);
+  width: 100px;
+  height: 24px; }
+.bar-elem.speed   {
+  background: rgba( 1, 1, 1, 0);
+  border: none;
+  border-radius: 6px;
+  width: 70px;
+  height: 30px; }
+.bar-elem.speed::placeholder {
+  font-size: 9pt;
+  color: rgba( 15, 15 ,15 ,0.8); }
+.bar-elem.split-2 { right: 56px; }
+.bar-elem.split, .bar-elem.split-2 {
+  cursor: auto;
+  width: 3px;
+  height: 32px;
+  background: hsl( 178, 100%, 7.3%);
+  border: none;
+  border-radius: 0%; }
+.bar-elem.share {
+  font-size: 23pt;
+  right: 15px; }
+.bar-elem .tooltip {
+  font-size: 8pt;
+  font-family: 'Raleway';
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba( 15, 15, 15, 0.8);
+  color: rgba( 115, 115, 115, 0.8);
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 6px;
+  position: absolute;
+  transform: translate( 18px, -230%);
+  z-index: 1; }
+.bar-elem:hover .tooltip { visibility: visible; }
+.bar-elem.share .tooltip {
+  transform: translate( -60%, -230%); }
+
+#aeon-scroll {
+  font-family: 'Overpass';
+  font-size: 9pt;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: calc(100% - 44px);
+  overflow-y: scroll; 
+  overflow-x: hidden;
+  background: rgba( 1, 1, 1, 0.65 ); }
+#aeon-content {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  white-space: pre-wrap; 
+  padding-left: 0.4em; }
+
+
+#notifier {
+ font-family: 'Raleway';
+ font-size: 14pt;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, 0%); }
+#notifier-clickr {
+ cursor: pointer;
+ color: rgba( 35, 35, 35, 1); }
+#notifier-clickr:hover {
+ color: rgba( 144, 144, 144, 1); }
+
+#progress {
+ font-family: 'Raleway';
+ font-size: 14pt;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, 0%); }
+
+#default-setting {
+ cursor: pointer;
+ font-family: 'Raleway';
+ font-size: 14pt;
+ color: rgba( 1, 1, 1, 0.75 );
+ position: absolute;
+ left: 32px;
+ top: 50%;
+ transform: translate(0, -55%);
+ transition: all 73ms; }
+ #default-setting:hover {
+  color: hsl(178, 100%, 14%); }
+#default-setting .static {
+ font-size: 14pt; }
+#default-setting .autop {
+ font-size: 0pt; }
+ 
+#save {
+ cursor: pointer;
+ font-family: 'Raleway';
+ font-size: 14pt;
+ color: rgba( 1, 1, 1, 0.75 );
+ position: absolute;
+ right: 32px;
+ top: 50%;
+ transform: translate(0, -55%);
+ transition: all 73ms; }
+ #save:hover {
+  color: hsl(178, 100%, 14%); }
+  
+.timestamp {
+ font-size: 8pt; }
+
+#background:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABIFJREFUeNrEWk1rGzEQXWuX0prQECcQYjAUFvbqs3NMfnz+QyDXQiBpaA+hPRhXMpIrT97MPKXQGhRJu/pYab7ezCR0XTfFMu52u67Uso2eyffyXS7zUpy1Fi37yu9NdYh/tqk1m83GUst26aP3pY4LPtTjUj/Xr6nIder58f232F7I57Itf2WP0ums27AooFBBXUPeYtVe5DIiqmscc7QGsQk8gEdu60OsD9P6HqsNFukACzxIFkLklqxRsdmDfK6tZY0F8/qOEeh86ncpBUtANXZkuaD+tllulN9LOnA+9YsmbPJ20Lj6eRmPFAKaV1MRUVb292uIU5/l9hkrtJ5MaVRA81hKozlB3MaLvBlNBSP50W5ZzOkR5czbBnIi5WWQgxHroPdoPCnMW+WA1iVM8d09EvoyZtD42vpAjRKIly3+1+aAfbcOlf/Ykc1ms8x8t9JkwtIyjC1h+b5x3aRNp4OM3N3dfapPe3t7e2ppLUQVC+oUG6TxvaatCHu13Rfl5CtPk7BwhrEpFvRpmMcZtKp9zn50CxtphxDrn5UC5vE3lNvn5UCsTHgHYICrZ+c6dtP4+5zrj7Gc5vbSA4kWSs7lKj+/sgQbUOboICHpaM0wKbr+Zyzfc/sro16lahXteV5/7sGd5+fnkN8tkCmgoHuhSqFMTRHvFhlgKN5N3lpyz8GD4B5I1CwtMnCmQTMQBeIUqfIHyxojy2v5Ih4CljbFWLeGMX0NTxT27wNaqPU25AfWxk+TO+25IqOTBuVLO8gbQrcshUpujCy2FzBg9spj95a7nodYubNwFfLEEiZjBbcea6lgw8eZNNUux82KeWc8MVYONLnQ5mqs7cjRkQgEJn6E5ODm5uY1CZkXB5P2RMqPxqZWfAvKLAshvBAQG/ph3NtGZHAc1/JCoP8RKI7MmJDJNrf8AOm/a2TXQqKIHbwoDFLp6dn19fVS04QjCjJ70T4POnhxMgcKja1RSai1LPCoxagYO+FpJU97WXZpYDZiLHyttTQoAVhvqrMB1fheBhyYgB9kh6enpwC1A6kEPEPGuMG1QfTYc5YbEN16lPHCqchHsVC0pyjMb9mfxrCYbDxX28zSVkZ0XVr9y9h/THXsniAEERi44IHKFtVqwXkUuMv9x7rWZG782+wU4m3P8jNF7HlpqfmAgtUSMkuojqC7YIt7Vp03tE+kRnwTMm1JtVlazDNujS7D2OIyBAbtahESLdvLQBwme5vCuEg20b4H9fuv/AZrfS0LYM19k0Ns/WcBFp6zGeDGtPgkFUpgsrmpXq/XvzS1ivIbKPiA1KyFnFFkv4qybOu1BtZlVUlahW8AS6zys1XsfrCsuZX08VLXB1dXE1SN56ubvc+qtrdQQXSLf2hC68mBlsc0XV0mD86ESKdpWuX+qhTWO2RVOtjf99M9J6fV1fWUxXuSSoFJcWkyY+EsLTuLWNBLuKJnUs6CyBteXVxcfDHy2n0JASH5QTZF8PwWpRs8h83735RDEFsTbMZAeinp6gK6ojKJ8Z2kuob5yrzfAgwASaYfY2UgQSYAAAAASUVORK5CYII=);
+
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}

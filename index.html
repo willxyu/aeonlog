@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+ <head><title>aeon∘log</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
+  <script src='./extlib/jquery-3.1.1.js'></script>
+  <script src='./extlib/jquery-ui.min.js'></script>
+  <script src='./extlib/jquery.debounce.js'></script>
+  <script src='./core/util.js'></script>
+  <script src='./core/style.js'></script>
+  <script src='./core/listen.js'></script>
+  <script src='./core/aeonlog.behaviours.js'></script>
+  <script src='./core/aeonlog.calculate.js'></script>
+  <script src='./core/aeonlog.playbackControl.js'></script>
+  <link  href='./extlib/jquery-ui.min.css' rel='stylesheet'>
+  <link  href='./core/aeonlog.main.css' rel='stylesheet'>
+  <link  href='./core/aeonlog.colors.css' rel='stylesheet'>
+ </head>
+ <body>
+  <div id='footer'>
+   <div id='author'>Log Replay for <a href='https://achaea.com' target='_blank'>Achaea</a> | © William Yu 2017</div>
+  </div>
+  <div id='datum'></div>
+  <div id='container'>
+   <div id='screen'></div>
+   <div id='pb-container'>
+   <div id='scrubber'>
+    <div id='scrubber-light'></div>
+   </div>
+   <div id='pbclock'></div>
+   <div id='rewind' class='pb-button'>&Lt;</div>
+   <div id='step-back' class='pb-button'>&LessLess;</div>
+   <div id='play-pause' class='pb-button'>&gt;</div>
+   <div id='step-forward' class='pb-button'>&GreaterGreater;</div>
+   <div id='fast-forward' class='pb-button'>&Gt;</div>
+   <div id='factor-back' class='factor-button'>&minus;</div>
+   <input id='factor-input' class='factor-input'></input>
+   <div id='factor-forward' class='factor-button'>&plus;</div>
+   <div id='timestamp-toggle' class='toggle-button'>timestamp</div>
+   <div id='afflictions-toggle' class='toggle-button'>afflictions</div>
+   <div id='updating'></div>
+   </div>
+   <input type="file" name="file" id="file" class="inputfile" style="display: none;" />
+  </div>
+  <div id='background'></div>
+ 
+ </body>
+ <script>
+  var log = console.log // Laziness
+  // prepare fonts
+  
+  WebFont.load({
+    custom: {
+      families: ['Overpass','Lekton','Raleway'] } })
+  WebFontConfig = {
+    active: function() { log('Completed font loading.') }, }
+    
+  $(window).on('load', function() {
+   render()
+   listen()
+  })
+  $(window).on('resize', function() {
+   render()
+  })
+
+ </script>
+</html>
+
+<!-- 
+ -->
